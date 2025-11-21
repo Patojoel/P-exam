@@ -1,13 +1,8 @@
+import { RouterProvider } from "react-router";
+import { Router } from "./shared/router/router.tsx";  // Modifiez cette ligne
 
-import './App.css'
+const App = () => {
+  return <RouterProvider router={Router()} />;
+};
 
-function App() {
-
-  return (
-    <>
-<div></div>
-    </>
-  )
-}
-
-export default App
+export default App;

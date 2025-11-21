@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router";
 import RootLayout from "./RootLayout";
 import ErrorBoundaryView from "./ErrorBoundaryView";
-import { AuthRouter } from "../../modules/auth/infra/ui/login/router/router";
+import { AuthRouter } from "../../modules/auth/router/router";
 
 export const Router = () => {
 
