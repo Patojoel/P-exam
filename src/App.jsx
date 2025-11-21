@@ -1,13 +1,14 @@
+import {Router} from "./shared/router/router.tsx";
+import {RouterProvider} from "react-router";
+const App = () => {
 
-import './App.css'
+    return (
+        <RouterProvider
+            router={Router()}
+        />
+    );
+};
 
-function App() {
+export default App;
 
-  return (
-    <>
-<div></div>
-    </>
-  )
-}
 
-export default App

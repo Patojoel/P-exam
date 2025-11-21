@@ -8,11 +8,7 @@ import { AuthRoutes } from "./routes";
 export const AuthRouter = [
   {
     path: "/",
-    element: (
-      <ProtectedRoute>
-        <AuthLayout />
-      </ProtectedRoute>
-    ),
+    element: <AuthLayout />,
     errorElement: <ErrorBoundaryView />,
     children: [
       {

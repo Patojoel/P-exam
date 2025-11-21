@@ -11,11 +11,11 @@ export const Router = () => {
             element: <RootLayout />,
             errorElement: <ErrorBoundaryView />,
             children: [
-                {
-                    path: "/",
-                    index: true,
-                    errorElement: <ErrorBoundaryView />,
-                },
+                // {
+                //     path: "/",
+                //     index: true,
+                //     errorElement: <ErrorBoundaryView />,
+                // },
 
                 ...AuthRouter,
 
