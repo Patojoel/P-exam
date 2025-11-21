@@ -1,7 +1,8 @@
 import { createBrowserRouter } from "react-router";
 import RootLayout from "./RootLayout";
 import ErrorBoundaryView from "./ErrorBoundaryView";
-import { AuthRouter } from "../../modules/auth/infra/ui/login/router/router";
+import { AuthRouter } from "../../modules/auth/infra/router/router";
+import { DashboardRouter } from "@/modules/dashboard/infra/router/router";
 
 export const Router = () => {
 
@@ -18,8 +19,8 @@ export const Router = () => {
                 // },
 
                 ...AuthRouter,
-
-                ],
+                ...DashboardRouter
+            ],
         },
     ]);
 };

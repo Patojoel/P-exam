@@ -1,0 +1,1 @@
+export { ColorPaletteDemo } from "./ColorPaletteDemo";

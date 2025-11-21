@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="Groupe_19628" data-name="Groupe 19628" transform="translate(-27 -10)">
+    <rect id="Rectangle_4617" data-name="Rectangle 4617" width="24" height="24" transform="translate(27 10)" fill="none"/>
+    <g id="Groupe_19626" data-name="Groupe 19626">
+      <g id="Groupe_19628-2" data-name="Groupe 19628">
+        <rect id="Rectangle_4617-2" data-name="Rectangle 4617" width="24" height="24" transform="translate(27 10)" fill="none"/>
+        <g id="Groupe_20321" data-name="Groupe 20321" transform="translate(27 10)">
+          <path id="Tracé_32477" data-name="Tracé 32477" d="M22,8.52V3.98C22,2.57,21.36,2,19.77,2H15.73c-1.59,0-2.23.57-2.23,1.98V8.51c0,1.42.64,1.98,2.23,1.98h4.04C21.36,10.5,22,9.93,22,8.52Z" fill="none" stroke="#0370ee" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+          <path id="Tracé_32478" data-name="Tracé 32478" d="M22,19.77V15.73c0-1.59-.64-2.23-2.23-2.23H15.73c-1.59,0-2.23.64-2.23,2.23v4.04c0,1.59.64,2.23,2.23,2.23h4.04C21.36,22,22,21.36,22,19.77Z" fill="none" stroke="#0370ee" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+          <path id="Tracé_32479" data-name="Tracé 32479" d="M10.5,8.52V3.98C10.5,2.57,9.86,2,8.27,2H4.23C2.64,2,2,2.57,2,3.98V8.51c0,1.42.64,1.98,2.23,1.98H8.27C9.86,10.5,10.5,9.93,10.5,8.52Z" fill="none" stroke="#0370ee" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+          <path id="Tracé_32480" data-name="Tracé 32480" d="M10.5,19.77V15.73c0-1.59-.64-2.23-2.23-2.23H4.23C2.64,13.5,2,14.14,2,15.73v4.04C2,21.36,2.64,22,4.23,22H8.27C9.86,22,10.5,21.36,10.5,19.77Z" fill="none" stroke="#0370ee" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

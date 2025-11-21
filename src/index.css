@@ -1,12 +1,139 @@
 @import "tailwindcss";
+
+ @font-face {
+     font-family: 'Gilroy';
+     src: url('/fonts/gilroy/Gilroy-Light.woff2') format('woff2');
+     font-weight: 300;
+     font-style: normal;
+     font-display: swap;
+   }
+
+   @font-face {
+     font-family: 'Gilroy';
+     src: url('/fonts/gilroy/Gilroy-Regular.woff2') format('woff2');
+     font-weight: 400;
+     font-style: normal;
+     font-display: swap;
+   }
+
+   @font-face {
+     font-family: 'Gilroy';
+     src: url('/fonts/gilroy/Gilroy-Medium.woff2') format('woff2');
+     font-weight: 500;
+     font-style: normal;
+     font-display: swap;
+   }
+
+   @font-face {
+     font-family: 'Gilroy';
+     src: url('/fonts/gilroy/Gilroy-Bold.woff2') format('woff2');
+     font-weight: 700;
+     font-style: normal;
+     font-display: swap;
+   }
+
+   @font-face {
+     font-family: 'Gilroy';
+     src: url('/fonts/gilroy/Gilroy-ExtraBold.woff2') format('woff2');
+     font-weight: 800;
+     font-style: normal;
+     font-display: swap;
+   }
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* ===== Palette de Couleurs ===== */
+  /* Couleurs principales */
+  --color-primary: #18227B;
+  --color-white: #FFFFFF;
+  --color-dark: #1E1F25;
+  --color-gray: #A5A5A7;
+
+  /* Couleurs avec transparence */
+  --color-gray-80: #A5A5A780;
+  --color-dark-33: #1E1F2533;
+  --color-dark-66: #1E1F2566;
+  --color-light-blue: #DDEEF0;
+  --color-teal: #448B96;
+  --color-border: #E6EAEFBD;
+
+  /* ===== Typographie ===== */
+  font-family: 'Gilroy', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  
+  /* Optimisation du rendu des fonts */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Application globale de la police Gilroy */
+body,
+html {
+  font-family: 'Gilroy', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Classes utilitaires pour les couleurs */
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-dark {
+  color: var(--color-dark);
+}
+
+.text-gray {
+  color: var(--color-gray);
+}
+
+.text-teal {
+  color: var(--color-teal);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-white {
+  background-color: var(--color-white);
+}
+
+.bg-dark {
+  background-color: var(--color-dark);
+}
+
+.bg-gray {
+  background-color: var(--color-gray);
+}
+
+.bg-gray-80 {
+  background-color: var(--color-gray-80);
+}
+
+.bg-dark-33 {
+  background-color: var(--color-dark-33);
+}
+
+.bg-dark-66 {
+  background-color: var(--color-dark-66);
+}
+
+.bg-light-blue {
+  background-color: var(--color-light-blue);
+}
+
+.bg-teal {
+  background-color: var(--color-teal);
+}
+
+.border-primary {
+  border-color: var(--color-primary);
+}
+
+.border-gray {
+  border-color: var(--color-gray);
+}
+
+.border-color {
+  border-color: var(--color-border);
 }

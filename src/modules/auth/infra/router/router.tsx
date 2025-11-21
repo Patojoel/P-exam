@@ -1,8 +1,7 @@
-import { RouteObject } from "react-router";
-import ErrorBoundaryView from "../../../../../../shared/router/ErrorBoundaryView";
-import ProtectedRoute from "../../../../../../shared/router/ProtectedRoute";
-import { AuthLayout } from "../../../../../layout/AuthLayout";
-import { LoginUser } from "../loginUser";
+import type { RouteObject } from "react-router";
+import ErrorBoundaryView from "../../../../shared/router/ErrorBoundaryView";
+import { AuthLayout } from "../../../layout/AuthLayout";
+import { LoginUser } from "../ui/login/loginUser";
 import { AuthRoutes } from "./routes";
 
 export const AuthRouter = [
