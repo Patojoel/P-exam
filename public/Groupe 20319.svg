@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="178" viewBox="0 0 600 178">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Rectangle_4629" data-name="Rectangle 4629" d="M12,0H392a0,0,0,0,1,0,0V166a12,12,0,0,1-12,12H12A12,12,0,0,1,0,166V12A12,12,0,0,1,12,0Z" fill="none" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#0370ee"/>
+    </linearGradient>
+    <clipPath id="clip-path-2">
+      <path id="Rectangle_4630" data-name="Rectangle 4630" d="M0,0H380a12,12,0,0,1,12,12V166a12,12,0,0,1-12,12H12A12,12,0,0,1,0,166V0A0,0,0,0,1,0,0Z" fill="none" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Groupe_20319" data-name="Groupe 20319" transform="translate(-32 -147)">
+    <g id="Groupe_de_masques_20" data-name="Groupe de masques 20" transform="translate(32 147)" clip-path="url(#clip-path)">
+      <path id="Tracé_32457" data-name="Tracé 32457" d="M2773.092,325s14.167-171.989,317.356-176.711S2740,146.008,2740,146.008V325Z" transform="translate(-2740 -147)" opacity="0.08" fill="url(#linear-gradient)"/>
+      <path id="Tracé_32459" data-name="Tracé 32459" d="M2739.251,179.352s24.4,144.617,222.748,145.561" transform="translate(-2740 -147)" fill="none" stroke="rgba(255,255,255,0.44)" stroke-width="1"/>
+    </g>
+    <g id="Groupe_de_masques_21" data-name="Groupe de masques 21" transform="translate(240 147)" clip-path="url(#clip-path-2)">
+      <path id="Tracé_32460" data-name="Tracé 32460" d="M3137.6,325s-14.167-171.989-317.356-176.711,350.448-2.281,350.448-2.281V325Z" transform="translate(-2778.694 -147)" opacity="0.08" fill="url(#linear-gradient)"/>
+      <path id="Tracé_32461" data-name="Tracé 32461" d="M2962.6,179.879s-24.253,144.09-222.6,145.035" transform="translate(-2570 -147)" fill="none" stroke="rgba(255,255,255,0.44)" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

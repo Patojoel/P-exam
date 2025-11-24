@@ -4,6 +4,7 @@ import { DashboardLayout } from "@/modules/layout/DashboardLayout";
 import { DashboardRoutes } from "./routes";
 import { ViewDashboard } from "../ui/viewDashboard";
 import { ViewPayments } from "@/modules/payments/infra/ui/ViewPayments";
+import { ViewPartners } from "../../partners/infra/ui/ViewPartners";
 
 
 export const DashboardRouter = [
@@ -22,6 +23,10 @@ export const DashboardRouter = [
                 element: <ViewPayments />,
                 errorElement: <ErrorBoundaryView />,
 
+            },
+            {
+                path:DashboardRoutes.partners,
+                element:<ViewPartners/>
             }
         ],
     },
