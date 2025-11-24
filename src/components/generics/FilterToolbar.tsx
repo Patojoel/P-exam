@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Search, Download } from "lucide-react";
+import { Search } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { ExportIcon } from "../icons";
 import { CalendarIcon } from "../icons/CalendarIcon";
@@ -23,18 +23,18 @@ export const FilterToolbar = ({ onSearch, onExport }: FilterToolbarProps) => {
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
             <Input
               placeholder="Chercher un code de paiement"
-              className="pl-9 bg-white border-gray-200"
+              className="pl-9 bg-gray-dashboard border-[#1E1F2533] rounded "
               onChange={(e) => onSearch?.(e.target.value)}
             />
           </div>
           <div className="flex items-center gap-4 w-full md:w-auto">
             <span className="font-bold text-sm text-[#1E1F25]">De</span>
-            <div className="flex items-center h-[44px] gap-2 border min-w-[145px] border-[#1E1F2533] rounded px-2 py-1 bg-white">
+            <div className="flex items-center h-[44px] gap-2 border min-w-[145px] border-[#1E1F2533] rounded px-2 py-1 bg-gray-dashboard ">
               <CalendarIcon size={24} />
               <span className="text-[14px] text-[#1E1F2566]">00/00/0000</span>
             </div>
             <span className="font-bold text-sm text-[#1E1F25]">À</span>
-            <div className="flex items-center h-[44px] gap-2 border min-w-[145px] border-[#1E1F2533] rounded px-2 py-1 bg-white">
+            <div className="flex items-center h-[44px] gap-2 border min-w-[145px] border-[#1E1F2533] rounded px-2 py-1 bg-gray-dashboard">
               <CalendarIcon size={24} />
               <span className="text-[14px] text-[#1E1F2566]">00/00/0000</span>
             </div>

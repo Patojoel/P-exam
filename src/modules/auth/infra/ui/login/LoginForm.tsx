@@ -78,7 +78,7 @@ export const LoginForm = () => {
                                         onCheckedChange={field.onChange}
                                     />
                                 </FormControl>
-                                <FormLabel className="font-[400] cursor-pointer text-sm">
+                                <FormLabel className="font-normal cursor-pointer text-sm">
                                     Se souvenir de moi
                                 </FormLabel>
                             </FormItem>
@@ -86,7 +86,7 @@ export const LoginForm = () => {
                     />
 
                     <a
-                        href="#" // Remplacez par votre route
+                        href="/forgot-password" // Remplacez par votre route
                         className="text-[#0370EE] hover:text-[#18227B] text-sm font-medium"
                     >
                         Mot de passe oublié?
