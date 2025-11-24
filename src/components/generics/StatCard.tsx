@@ -23,7 +23,7 @@ export const StatCard: React.FC<StatCardProps> = ({
         <span className="text-[#1E1F25] text-[24px] font-bold">{amount}</span>
       </div>
       <div className="bg-[#DDEEF0] p-3 rounded-[12px] flex items-center justify-center min-w-[67px] min-h-[67px]">
-        {icon || <StatsIcon size={24} color="white" />}
+        {icon || <StatsIcon size={40} color="#448B96" />}
       </div>
     </div>
   );
