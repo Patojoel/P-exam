@@ -3,8 +3,8 @@ import { Navbar } from "@/shared/components/navbar/Navbar";
 
 export const DashboardLayout = () => {
     return (
-        <div className="flex flex-col px-8   items-center gap-6 h-screen bg-[#F6F6FA]">
-            <div className="flex flex-col mt-4  px-5 md:flex-row justify-between items-center gap-4 min-h-[84px] w-full bg-white  rounded-[12px] ">
+        <div className="flex flex-col px-8 min-h-svh h-auto   items-center gap-6  bg-[#F6F6FA]">
+            <div className="flex sticky top-0 z-10 flex-col mt-4  px-5 md:flex-row justify-between items-center gap-4 min-h-[84px] w-full bg-white  rounded-[12px] ">
                 <div>
                     <img src="/logoCrina.svg" alt="logoCrina" />                </div>
                 <Navbar />

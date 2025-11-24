@@ -127,6 +127,7 @@ export function DataTable<T extends { id: string }>({
         getCanPreviousPage={table.getCanPreviousPage}
         getCanNextPage={table.getCanNextPage}
         nextPage={table.nextPage}
+        previousPage={table.previousPage}
       />
     </>
   );

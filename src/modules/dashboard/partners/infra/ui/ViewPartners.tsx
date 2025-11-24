@@ -11,7 +11,7 @@ export const ViewPartners = () => {
   const columns = PartnersColumns({ onCancel: handleCancel });
 
   return (
-    <div className="flex flex-col gap-6 w-full p-6">
+    <div className="flex overflow-y-auto  flex-col gap-6 w-full h-screen p-6">
       <div className="flex items-center gap-4">
         <button onClick={handleBack} className="hover:opacity-80">
           <BackIcon />

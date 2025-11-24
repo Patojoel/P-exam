@@ -1,6 +1,5 @@
 import type { DashboardInfoEntity } from "@/modules/dashboard/models/DashboardInfoEntity";
 import { useRouter } from "@/shared/hooks/useRouter";
-import type { PaginationData } from "@/shared/interfaces/PaginationData";
 import { useEffect, useState } from "react";
 import { DashboardRoutes } from "../../router/routes";
 
@@ -50,7 +49,7 @@ export const useDashboard = () => {
 
         const timer = setTimeout(() => {
             setListInformation(mockData);
-        }, 1000);
+        }, 10);
 
         return () => clearTimeout(timer);
     }, []);

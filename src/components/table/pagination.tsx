@@ -1,10 +1,10 @@
 "use client";
-import {Label} from "@/components/ui/label.tsx";
-import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select.tsx";
-import {Button} from "@/components/ui/button.tsx";
-import {ChevronLeft, ChevronRight} from "lucide-react";
+import { Label } from "@/components/ui/label.tsx";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select.tsx";
+import { Button } from "@/components/ui/button.tsx";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import * as React from "react";
-import {twMerge} from "tailwind-merge";
+import { twMerge } from "tailwind-merge";
 
 interface PaginationProps {
     currentPage: number;
@@ -16,24 +16,28 @@ interface PaginationProps {
     getCanPreviousPage: () => boolean;
     getCanNextPage: () => boolean;
     nextPage: () => void;
+    previousPage: () => void;
     maxVisiblePages?: number;
     className?: string;
-    paginations ?:number[]
+    paginations?: number[]
 }
-const maxVisiblePages = 3
+
+const maxVisiblePages = 5;
+
 export const Pagination: React.FC<PaginationProps> = ({
-                                                   currentPage,
-                                                   pageSize,
-                                                   totalPages,
-                                                   setPageIndex,
-                                                   setPageSize,
-                                                   getRowCount,
-                                                   getCanPreviousPage,
-                                                   getCanNextPage,
-                                                   nextPage,
+    currentPage,
+    pageSize,
+    totalPages,
+    setPageIndex,
+    setPageSize,
+    getRowCount,
+    getCanPreviousPage,
+    getCanNextPage,
+    nextPage,
+    previousPage,
     className,
-                                                    paginations=[5,10,25, 50]
-                                               }) => {
+    paginations = [10, 25, 50, 100]
+}) => {
     if (totalPages <= 1) return null;
 
     const getPageNumbers = () => {
@@ -47,14 +51,6 @@ export const Pagination: React.FC<PaginationProps> = ({
             startPage = Math.max(1, endPage - maxVisiblePages + 1);
         }
 
-        // Always show first page
-        if (startPage > 1) {
-            pages.push(1);
-            if (startPage > 2) {
-                pages.push('...');
-            }
-        }
-
         // Visible pages
         for (let i = startPage; i <= endPage; i++) {
             if (i > 0 && i <= totalPages) {
@@ -62,23 +58,20 @@ export const Pagination: React.FC<PaginationProps> = ({
             }
         }
 
-        // Always show last page
+        // Add ellipsis if needed
         if (endPage < totalPages) {
-            if (endPage < totalPages - 1) {
-                pages.push('...');
-            }
-            pages.push(totalPages);
+            pages.push('...');
         }
 
         return pages;
     };
 
     return (
-
-        <div className={twMerge("flex bg-white sticky bottom-0 z-10 items-center justify-between px-4 py-3.5", className)}>
-            <div className="hidden items-center gap-2 lg:flex">
-                <Label htmlFor="rows-per-page" className="text-sm font-medium">
-                    Afficher
+        <div className={twMerge("flex items-center justify-between px-4 py-4 mt-4 bg-white", className)}>
+            {/* Left: Items per page */}
+            <div className="flex items-center gap-2">
+                <Label htmlFor="rows-per-page" className="text-sm font-normal text-[#A5A5A7] whitespace-nowrap">
+                    Nombre d'éléments par page
                 </Label>
                 <Select
                     value={`${pageSize}`}
@@ -86,94 +79,94 @@ export const Pagination: React.FC<PaginationProps> = ({
                         setPageSize(Number(value))
                     }}
                 >
-                    <SelectTrigger size="sm" className="w-18" id="rows-per-page">
-                        <SelectValue
-                            placeholder={pageSize}
-                        />
+                    <SelectTrigger
+                        className="w-[70px] h-[36px] border-[#E6EAEFBD] bg-[#D2D2D3] "
+                        id="rows-per-page"
+                    >
+                        <SelectValue placeholder={pageSize} />
                     </SelectTrigger>
-                    <SelectContent side="top">
-                        {paginations.map((pageSize) => (
-                            <SelectItem key={pageSize} value={`${pageSize}`}>
-                                {pageSize}
+                    <SelectContent className="bg-[#D2D2D3] z-10" side="top">
+                        {paginations.map((size) => (
+                            <SelectItem key={size} value={`${size}`}>
+                                {size}
                             </SelectItem>
                         ))}
                     </SelectContent>
                 </Select>
-                <Label htmlFor="rows-per-page" className="text-sm font-medium">
-                    sur {getRowCount()}
-                </Label>
             </div>
-            <div className=" flex items-center gap-2 ">
+
+            <div className="flex items-center gap-4">
+                {/* Previous button */}
                 <Button
                     variant="outline"
-                    size={"sm"}
-                    className="p-0 h-7 flex text-sidebar-foreground border-border"
-                    onClick={() => setPageIndex(0)}
+                    size="icon"
+                    className="h-[28px] w-[28px] rounded bg-[#D2D2D3] border-[#E6EAEFBD] hover:bg-[#E6EAEFBD]"
+                    onClick={() => previousPage()}
                     disabled={!getCanPreviousPage()}
                 >
-                    <ChevronLeft />
-                    <span>Retour</span>
+                    <ChevronLeft className="h-4 w-4 text-[#1E1F25]" />
                 </Button>
-                {
-                    getPageNumbers().map((page, index)=> (
-                        <span key={index}>
-                            {
-                                typeof page ==='number'? (
-                                    <Button
-                                        variant={currentPage === page? "default":"outline"}
-                                        className={
-                                        twMerge("w-7 h-7",
-                                            currentPage !== page?
-                                                " text-[#2A323D] border-border"
-                                                :""
-                                            )
-                                        }
-                                        size="sm"
-                                        onClick={() => setPageIndex(page-1)}
-                                        // disabled={!getCanPreviousPage()}
-                                    >
-                                        {page}
-                                    </Button>
-                                ):(
-                                    <span>{page}</span>
-                                )
-                            }
 
-                        </span>
+                {/* Page numbers */}
+                {getPageNumbers().map((page, index) => (
+                    <span key={index}>
+                        {typeof page === 'number' ? (
+                            <Button
+                                variant={currentPage === page ? "default" : "outline"}
+                                className={twMerge(
+                                    "h-[28px] w-[28px] rounded font-medium",
+                                    currentPage === page
+                                        ? "bg-[#0370EE] text-white hover:bg-[#0370EE]/90 border-[#0370EE]"
+                                        : "bg-[#D2D2D3] text-[#1E1F25] border-[#E6EAEFBD] hover:bg-[#E6EAEFBD]"
+                                )}
+                                size="icon"
+                                onClick={() => setPageIndex(page - 1)}
+                            >
+                                {page.toString().padStart(2, '0')}
+                            </Button>
+                        ) : (
+                            <span className="px-2 text-[#A5A5A7]">{page}</span>
+                        )}
+                    </span>
+                ))}
 
-                    ))
-                }
-                {/*<Button*/}
-                {/*    variant="outline"*/}
-                {/*    className="p-0 flex text-sidebar-foreground border-border"*/}
-                {/*    size="sm"*/}
-                {/*    onClick={() => previousPage()}*/}
-                {/*    disabled={!getCanPreviousPage()}*/}
-                {/*>*/}
-                {/*    <span className="sr-only">Go to previous page</span>*/}
-                {/*    <ChevronLeft />*/}
-                {/*</Button>*/}
-                {/*<Button*/}
-                {/*    variant="outline"*/}
-                {/*    className="p-0 flex text-sidebar-foreground border-border"*/}
-                {/*    size="sm"*/}
-                {/*    onClick={() => nextPage()}*/}
-                {/*    disabled={!getCanNextPage()}*/}
-                {/*>*/}
-                {/*    <span className="sr-only">Go to next page</span>*/}
-                {/*    /!*<IconChevronRight />*!/*/}
-                {/*    <ChevronRight />*/}
-                {/*</Button>*/}
+                {/* Next button */}
                 <Button
                     variant="outline"
-                    className="p-0 h-7 flex text-sidebar-foreground border-border"
-                    size="sm"
+                    size="icon"
+                    className="h-[28px] w-[28px] rounded bg-[#D2D2D3] border-[#E6EAEFBD] hover:bg-[#E6EAEFBD]"
                     onClick={() => nextPage()}
                     disabled={!getCanNextPage()}
                 >
-                    <span>Suivant</span>
-                    <ChevronRight />
+                    <ChevronRight className="h-4 w-4 text-[#1E1F25]" />
                 </Button>
+            </div>
+
+            {/* Right: Page selector */}
+            <div className="flex items-center gap-2">
+                <Label htmlFor="page-selector" className="text-sm font-normal text-[#A5A5A7]">
+                    Page
+                </Label>
+                <Select
+                    value={`${currentPage}`}
+                    onValueChange={(value) => {
+                        setPageIndex(Number(value) - 1)
+                    }}
+                >
+                    <SelectTrigger
+                        className=" w-[60px] h-[36px]  border-[#E6EAEFBD] bg-[#D2D2D3]"
+                        id="page-selector"
+                    >
+                        <SelectValue   placeholder={currentPage} />
+                    </SelectTrigger>
+                    <SelectContent className="bg-[#D2D2D3] " side="top">
+                        {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                            <SelectItem key={page} value={`${page}`}>
+                                {page}
+                            </SelectItem>
+                        ))}
+                    </SelectContent>
+                </Select>
             </div>
         </div>
     );

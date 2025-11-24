@@ -73,11 +73,12 @@ export const LoginForm = () => {
                             <FormItem className="flex flex-row items-center space-x-2 space-y-0">
                                 <FormControl>
                                     <Checkbox
+                                    className='w-[20px] h-[20px] border border-checkbox'
                                         checked={field.value}
                                         onCheckedChange={field.onChange}
                                     />
                                 </FormControl>
-                                <FormLabel className="font-normal cursor-pointer text-sm">
+                                <FormLabel className="font-[400] cursor-pointer text-sm">
                                     Se souvenir de moi
                                 </FormLabel>
                             </FormItem>
@@ -86,7 +87,7 @@ export const LoginForm = () => {
 
                     <a
                         href="#" // Remplacez par votre route
-                        className="text-[#0370EE] hover:text-[#18227B] text-[14px] font-medium"
+                        className="text-[#0370EE] hover:text-[#18227B] text-sm font-medium"
                     >
                         Mot de passe oublié?
                     </a>

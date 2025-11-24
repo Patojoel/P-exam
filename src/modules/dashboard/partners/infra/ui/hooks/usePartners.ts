@@ -33,7 +33,7 @@ export const usePartners = () => {
         const timer = setTimeout(() => {
             setPartnerInfo(mockPartners);
             setStats(mockStats);
-        }, 1000);
+        }, 10);
 
         return () => clearTimeout(timer);
     }, []);

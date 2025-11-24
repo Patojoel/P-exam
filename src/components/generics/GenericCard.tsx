@@ -14,7 +14,7 @@ export const GenericCard: React.FC<GenericCardProps> = ({
     className = "",
 }) => {
     return (
-        <div className={`bg-white rounded-[12px] px-4 min-h-[350px] flex flex-col ${className}`}>
+        <div className={`bg-white rounded-[12px] px-4 h-auto flex flex-col ${className}`}>
             {header && <div className="mb-4">{header}</div>}
             <div className="grow">{children}</div>
             {footer && <div className="mt-4">{footer}</div>}

@@ -8,19 +8,16 @@ export const DashboardInfo = ({ data }: { data: DashboardBehavior }) => {
     const { listinformation, handleViewPartner} = data;
 
 
-    if (!listinformation) {
-        return <div>Loading...</div>; // Or a skeleton loader
-    }
-
+ 
     return (
-        <div className="flex flex-col gap-8 w-full">
+        <div className="flex flex-col   gap-8 w-full">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
                 <div className="relative bg-primary rounded-[12px] w-full">
                     <img src="/Groupe 20319.svg" className="w-full min-h-[178px] object-cover" alt="firstImgCard" />
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white w-full text-center">
                         <div className="flex flex-col items-center gap-2">
                             <span className="text-[14px] text-white/60 font-normal">Montant total</span>
-                            <span className="text-[28px] font-bold">{formatCurrency(listinformation.totalAmount)}</span>
+                            <span className="text-[28px] font-bold">{formatCurrency(listinformation?.totalAmount || 0)}</span>
                             <div className="flex items-center gap-2 mt-1 cursor-pointer hover:opacity-80 transition-opacity">
                                 <EyesIcon size={16} color="#0370EE"/>
                                 <span className="text-[#0370EE] text-[12px] font-normal">Cacher le montant</span>
@@ -33,7 +30,7 @@ export const DashboardInfo = ({ data }: { data: DashboardBehavior }) => {
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white w-full text-center">
                         <div className="flex flex-col items-center gap-2">
                             <span className="text-[14px] text-white/60 font-normal">Montant total de commission</span>
-                            <span className="text-[28px] font-bold">{formatCurrency(listinformation.totalCommission)}</span>
+                            <span className="text-[28px] font-bold">{formatCurrency(listinformation?.totalCommission || 0)}</span>
                             <div className=" text-[#0370EE] flex items-center gap-2 mt-1 cursor-pointer hover:opacity-80 transition-opacity">
                                 <EyesIcon  size={16} color="#0370EE" />
                                 <span className=" text-[12px] font-normal">Cacher le montant</span>
@@ -44,9 +41,9 @@ export const DashboardInfo = ({ data }: { data: DashboardBehavior }) => {
             </div>
 
             <div className="flex flex-col gap-4">
-                <h2 className="text-[18px] font-bold text-[#1E1F25]">Partenaires</h2>
+                <h2 className="text-[20px] font-bold text-[#1E1F25]">Partenaires</h2>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                    {listinformation.partners.map((item) => (
+                    {listinformation?.partners.map((item) => (
                         <GenericCard
                             key={item.id}
                             className="border border-[#E6EAEFBD]"
