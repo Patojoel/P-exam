@@ -101,7 +101,7 @@ export const LoginForm = () => {
 
                 <Button
                     type="submit"
-                    className="w-full h-[44px] bg-[#18227B] rounded-[4px] text-white  text-[16px] "
+                    className="w-full h-[44px] bg-primary rounded-[4px] text-white font-normal  text-[16px] "
                     disabled={isLoading}
                 >
                     {isLoading ? (
