@@ -1,25 +1,23 @@
-import { useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
 import { navbarItems } from "./NavbarItems";
+import { useRouter } from "@/shared/hooks/useRouter";
 
 export const useNavbar = () => {
-    const navigate = useNavigate();
-    const location = useLocation();
+    const router = useRouter();
+    const currentPath = router.pathname;
 
-    const [selectedItem, setSelectedItem] = useState(navbarItems[0].href);
-
-    const handleNavigation = (href: string) => {
-        setSelectedItem(href);
-        navigate(href);
+    const isSelectedPath = (path: string) => {
+        return currentPath === path;
     };
 
-    const isSelected = (href: string) => {
-        return location.pathname === href || selectedItem === href;
+    const handleNavigation = (path: string) => {
+        router.handleNavigate(path);
     };
 
     return {
+        currentPath,
         navbarItems,
         handleNavigation,
-        isSelected
+        isSelectedPath
     };
 };
+

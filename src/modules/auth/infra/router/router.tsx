@@ -12,8 +12,9 @@ export const AuthRouter = [
     errorElement: <ErrorBoundaryView />,
     children: [
       {
-        path: AuthRoutes.login,
+        path: "/",
         element: <LoginUser />,
+        index:true,
         errorElement: <ErrorBoundaryView />,
       },
       {

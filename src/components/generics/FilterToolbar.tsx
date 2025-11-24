@@ -42,11 +42,11 @@ export const FilterToolbar = ({ onSearch, onExport }: FilterToolbarProps) => {
         </div>
         <Button
           variant="outline"
-          className="text-blue text-sm border-blueText hover:bg-blue min-h-[36px] gap-2 min-w-[118px] font-normal"
+          className="text-blue border-blueText hover:bg-blue min-h-[36px] gap-2 min-w-[118px] font-normal"
           onClick={onExport}
         >
-          <ExportIcon size={24} color="#0370EE" />
-          Exporter
+          <ExportIcon size={24} color="#0370EE" className="h-8 w-8"/>
+         <span className="font-semibold text-sm"> Exporter</span>
         </Button>
       </div>
     </Form>
