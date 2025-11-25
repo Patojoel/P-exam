@@ -4,6 +4,10 @@ import { AuthLayout } from "../../../layout/AuthLayout";
 import { LoginUser } from "../ui/login/loginUser";
 import { AuthRoutes } from "./routes";
 import { ViewForgetPassword } from "../ui/forgot-password/ViewForgotPassword";
+import ProtectedRoute from "@/shared/router/ProtectedRoute";
+import { DashboardRoutes } from "@/modules/dashboard/infra/router/routes";
+import { APP_RESOURCE } from "@/shared/rbac/APP_RESOURCE";
+import { PermissionAction } from "@/shared/rbac/PermissionAction";
 
 export const AuthRouter = [
   {
@@ -12,9 +16,16 @@ export const AuthRouter = [
     errorElement: <ErrorBoundaryView />,
     children: [
       {
-        path: "/",
-        element: <LoginUser />,
-        index:true,
+        path: AuthRoutes.login,
+        element: (
+          <ProtectedRoute
+            action={PermissionAction.READ}
+            retUrl={DashboardRoutes.base}
+            resource={APP_RESOURCE.AUTH}
+          >
+            <LoginUser />
+          </ProtectedRoute>
+        ),
         errorElement: <ErrorBoundaryView />,
       },
       {

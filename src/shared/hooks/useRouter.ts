@@ -40,7 +40,7 @@ export const useRouter = () => {
         handleNavigate,
         handleBackToPreviousPage,
         isActiveRoute,
-        pathname: location.pathname,
+        pathname: decodeURIComponent(location.pathname),
         state:location.state,
         navigate,
         handleNavigateWithState,

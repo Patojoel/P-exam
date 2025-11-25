@@ -60,7 +60,7 @@ export const PartnersColumns = ({
       </div>
     ),
     cell: ({ row }) => (
-      <span className="font-bold text-[#1E1F25]">
+      <span className="font-medium text-[#1E1F25]">
         {formatCurrency(row.original.amount)}
       </span>
     ),
@@ -96,7 +96,7 @@ export const PartnersColumns = ({
     cell: ({ row }) => (
       <Button
         variant="ghost"
-        className="text-[#0370ee] bg-[#E8F2FD] hover:bg-[#E8F2FD]/80 font-medium"
+        className="text-[#0370ee] bg-[#E8F2FD] justify-end hover:bg-[#E8F2FD]/80 font-medium"
         onClick={() => onCancel(row.original.id)}
       >
         Annuler

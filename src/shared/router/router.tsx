@@ -3,8 +3,9 @@ import RootLayout from "./RootLayout";
 import ErrorBoundaryView from "./ErrorBoundaryView";
 import { AuthRouter } from "../../modules/auth/infra/router/router";
 import { DashboardRouter } from "@/modules/dashboard/infra/router/router";
+import type { AppStore } from "@/lib/store/store";
 
-export const Router = () => {
+export const Router = (store:AppStore) => {
 
     return createBrowserRouter([
         {
@@ -19,7 +20,7 @@ export const Router = () => {
                 // },
 
                 ...AuthRouter,
-                ...DashboardRouter
+                ...DashboardRouter(store)
             ],
         },
     ]);

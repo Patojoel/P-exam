@@ -93,11 +93,11 @@ export function DataTable<T extends { id: string }>({
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow
               key={headerGroup.id}
-              className={"border-b border-[#C2C8D0]"}
+              className={"border-b  border-[#C2C8D0]"}
             >
               {headerGroup.headers.map((header) => {
                 return (
-                  <TableHead key={header.id} colSpan={header.colSpan}>
+                  <TableHead className="py-4" key={header.id} colSpan={header.colSpan}>
                     {header.isPlaceholder
                       ? null
                       : flexRender(

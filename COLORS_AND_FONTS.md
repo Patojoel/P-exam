@@ -143,7 +143,7 @@ Pour une meilleure performance et disponibilité offline :
 
 ### Exemple 4 : Utilisation avec Tailwind
 ```tsx
-<div className="bg-[var(--color-primary)] text-[var(--color-white)]">
+<div className="`bg-[--color-primary]` text-[--color-white]">
   Contenu avec variables CSS
 </div>
 ```

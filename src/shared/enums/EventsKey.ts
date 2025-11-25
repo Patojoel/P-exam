@@ -1,0 +1,10 @@
+
+
+
+export enum EventsKey {
+  LOGOUT = 'LOGOUT',
+  MODAL = 'MODAL',
+  DISCLOSURE = 'DISCLOSURE',
+  UPDATE_CASE_FILE = 'UPDATE_CASE_FILE',
+  ON_BOARDING = 'ON_BOARDING'
+}

@@ -10,7 +10,7 @@ export const ViewPayments = () => {
   const columns = PartnersColumns({ onCancel: handleCancel });
 
   return (
-    <div className="flex flex-col gap-6 w-full h-screen p-6">
+    <div className="flex flex-col gap-6 w-full h-screen ">
       <FilterToolbar />
       {stats && (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
