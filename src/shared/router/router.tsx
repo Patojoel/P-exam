@@ -4,6 +4,7 @@ import ErrorBoundaryView from "./ErrorBoundaryView";
 import { AuthRouter } from "../../modules/auth/infra/router/router";
 import { DashboardRouter } from "@/modules/dashboard/infra/router/router";
 import type { AppStore } from "@/lib/store/store";
+import { DashboardPartnersRouter } from "@/modules/dashboardPartners/infra/router/router";
 
 export const Router = (store:AppStore) => {
 
@@ -20,7 +21,8 @@ export const Router = (store:AppStore) => {
                 // },
 
                 ...AuthRouter,
-                ...DashboardRouter(store)
+                ...DashboardRouter(store),
+                ...DashboardPartnersRouter(store)
             ],
         },
     ]);

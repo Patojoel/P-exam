@@ -15,17 +15,18 @@ import { PermissionAction } from "@/shared/rbac/PermissionAction";
 export const DashboardRouter = (store: AppStore) => [
     {
         path: DashboardRoutes.base,
-        element: <ProtectedRoute action={PermissionAction.READ}
-            retUrl={AuthRoutes.base}
-            resource={APP_RESOURCE.DASHBOARD}>
-            <DashboardLayout />
-        </ProtectedRoute>,
+        element: 
+        // <ProtectedRoute action={PermissionAction.READ}
+        //     retUrl={AuthRoutes.base}
+        //     resource={APP_RESOURCE.DASHBOARD}>
+            <DashboardLayout />,
+        // </ProtectedRoute>,
         errorElement: <ErrorBoundaryView />,
         children: [
-            {
-                index: true,
-                element: <Navigate to={AuthRoutes.login} replace />,
-            },
+            // {
+            //     index: true,
+            //     element: <Navigate to={AuthRoutes.login} replace />,
+            // },
             {
                 path: DashboardRoutes.base,
                 element: <ViewDashboard />,

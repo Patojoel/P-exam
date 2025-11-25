@@ -86,6 +86,7 @@ export const Pagination: React.FC<PaginationProps> = ({
                         <SelectValue placeholder={pageSize} />
                     </SelectTrigger>
                     <SelectContent className="bg-[#D2D2D3] z-10" side="top">
+                        {getRowCount()}
                         {paginations.map((size) => (
                             <SelectItem key={size} value={`${size}`}>
                                 {size}

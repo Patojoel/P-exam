@@ -6,5 +6,6 @@ type RoleRouteMap = Record<string, string>;
 
 export const ROLES_ACCESS_BASED_ROUTES_MATCHER: RoleRouteMap = {
     [UserRole.GUEST]: AuthRoutes.base,
+    
 
 };

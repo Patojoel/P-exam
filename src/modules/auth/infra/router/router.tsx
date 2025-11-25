@@ -18,13 +18,13 @@ export const AuthRouter = [
       {
         path: AuthRoutes.login,
         element: (
-          <ProtectedRoute
-            action={PermissionAction.READ}
-            retUrl={DashboardRoutes.base}
-            resource={APP_RESOURCE.AUTH}
-          >
+          // <ProtectedRoute
+          //   action={PermissionAction.READ}
+          //   retUrl={DashboardRoutes.base}
+          //   resource={APP_RESOURCE.AUTH}
+          // >
             <LoginUser />
-          </ProtectedRoute>
+          // </ProtectedRoute>
         ),
         errorElement: <ErrorBoundaryView />,
       },
