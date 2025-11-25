@@ -158,7 +158,7 @@ export const Pagination: React.FC<PaginationProps> = ({
                         className=" w-[60px] h-[36px]  border-[#E6EAEFBD] bg-[#D2D2D3]"
                         id="page-selector"
                     >
-                        <SelectValue   placeholder={currentPage} />
+                        <SelectValue placeholder={currentPage} />
                     </SelectTrigger>
                     <SelectContent className="bg-[#D2D2D3] " side="top">
                         {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
