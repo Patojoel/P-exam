@@ -67,9 +67,9 @@ export const Pagination: React.FC<PaginationProps> = ({
     };
 
     return (
-        <div className={twMerge("flex items-center justify-between px-4 py-4 mt-4 bg-white", className)}>
+        <div className={twMerge("flex items-center justify-between min-h-[28px]  px-4 py-4 mt-2 bg-white", className)}>
             {/* Left: Items per page */}
-            <div className="flex items-center gap-2">
+            <div className="flex h-[25px] items-center gap-2">
                 <Label htmlFor="rows-per-page" className="text-sm font-normal text-[#A5A5A7] whitespace-nowrap">
                     Nombre d'éléments par page
                 </Label>
@@ -80,13 +80,14 @@ export const Pagination: React.FC<PaginationProps> = ({
                     }}
                 >
                     <SelectTrigger
-                        className="w-[70px] h-[36px] border-[#E6EAEFBD] bg-[#D2D2D3] "
+                        className="w-[70px] flex items-center min-h-[28px] border-[#E6EAEFBD] bg-[#D2D2D3] "
                         id="rows-per-page"
                     >
                         <SelectValue placeholder={pageSize} />
+                   <span className="font-semibold"> {getRowCount()}</span>
                     </SelectTrigger>
                     <SelectContent className="bg-[#D2D2D3] z-10" side="top">
-                        {getRowCount()}
+                        
                         {paginations.map((size) => (
                             <SelectItem key={size} value={`${size}`}>
                                 {size}
@@ -155,10 +156,10 @@ export const Pagination: React.FC<PaginationProps> = ({
                     }}
                 >
                     <SelectTrigger
-                        className=" w-[60px] h-[36px]  border-[#E6EAEFBD] bg-[#D2D2D3]"
+                        className=" w-[60px] h-[28px]  border-[#E6EAEFBD] bg-[#D2D2D3]"
                         id="page-selector"
                     >
-                        <SelectValue placeholder={currentPage} />
+                        <SelectValue   placeholder={currentPage} />
                     </SelectTrigger>
                     <SelectContent className="bg-[#D2D2D3] " side="top">
                         {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (

@@ -1,13 +1,13 @@
 import { FilterToolbar } from "@/components/generics/FilterToolbar";
 import { StatCard } from "@/components/generics/StatCard";
 import { DataTable } from "@/components/table/data-table";
-import { PartnersColumns } from "@/modules/dashboard/partners/infra/ui/components/PartnersColumns";
-import { usePartners } from "@/modules/dashboard/partners/infra/ui/hooks/usePartners";
+import { usePayments } from "./hooks/usePayments";
 import { formatCurrency } from "@/shared/helpers/format/formatCurrency";
+import { PaymentColumns } from "./component/PaymentColumns";
 
 export const ViewPayments = () => {
-  const { listPartners, stats, handleCancel } = usePartners();
-  const columns = PartnersColumns({ onCancel: handleCancel });
+  const { listPartners, stats, handleCancel } = usePayments();
+  const columns = PaymentColumns({ onCancel: handleCancel });
 
   return (
     <div className="flex flex-col gap-6 w-full h-screen ">

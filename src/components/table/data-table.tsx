@@ -32,7 +32,7 @@ function DraggableRow<T extends { id: string }>({ row }: { row: Row<T> }) {
       className="relative z-0 data-[dragging=true]:z-10 data-[dragging=true]:opacity-80"
     >
       {row.getVisibleCells().map((cell, index) => (
-        <TableCell key={cell.id + index}>
+        <TableCell className="py-2 border-b border-[#C2C8D0]" key={cell.id + index}>
           {flexRender(cell.column.columnDef.cell, cell.getContext())}
         </TableCell>
       ))}

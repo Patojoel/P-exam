@@ -7,4 +7,5 @@ export interface PartnersEntity {
     type: string;
     establishment: string;
     status: string;
+    operator?: string;
 }

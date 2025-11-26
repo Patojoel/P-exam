@@ -8,7 +8,7 @@ interface PartnersColumnsProps {
   onCancel: (id: string) => void;
 }
 
-export const PartnersColumns = ({
+export const PaymentColumns = ({
   onCancel,
 }: PartnersColumnsProps): ColumnDef<PartnersEntity>[] => [
   {
@@ -63,6 +63,18 @@ export const PartnersColumns = ({
       <span className="font-medium text-[#1E1F25]">
         {formatCurrency(row.original.amount)}
       </span>
+    ),
+  },
+  {
+    accessorKey: "operator",
+    header: () => (
+      <div className="flex items-center gap-2">
+        <span className="font-bold text-white">Operateur</span>
+        <ArrowSwapIcon />
+      </div>
+    ),
+    cell: ({ row }) => (
+      <span className="font-medium text-[#1E1F25]">{row.original.operator}</span>
     ),
   },
   {

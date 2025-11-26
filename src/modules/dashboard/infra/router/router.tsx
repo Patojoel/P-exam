@@ -3,7 +3,7 @@ import ErrorBoundaryView from "../../../../shared/router/ErrorBoundaryView";
 import { DashboardLayout } from "@/modules/layout/DashboardLayout";
 import { DashboardRoutes } from "./routes";
 import { ViewDashboard } from "../ui/viewDashboard";
-import { ViewPayments } from "@/modules/payments/infra/ui/ViewPayments";
+import { ViewPayments } from "@/modules/payments/infra/ui/index/ViewPayments";
 import { ViewPartners } from "../../partners/infra/ui/ViewPartners";
 import type { AppStore } from "@/lib/store/store";
 import ProtectedRoute from "@/shared/router/ProtectedRoute";
