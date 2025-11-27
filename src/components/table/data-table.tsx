@@ -89,7 +89,7 @@ export function DataTable<T extends { id: string }>({
   return (
     <>
       <Table>
-        <TableHeader className="bg-primary  min-h-[50px] sticky top-0 z-10">
+        <TableHeader className="bg-primary    sticky top-0 z-10">
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow
               key={headerGroup.id}

@@ -6,8 +6,20 @@ import { PartnersColumns } from "./components/PartnersColumns";
 import { BackIcon } from "@/components/icons/BackIcon";
 import { formatCurrency } from "@/shared/helpers/format/formatCurrency";
 
+import { PartnerChart } from "./components/chart/PartnerChart";
+import { RecoursChart } from "./components/chart/RecoursChart";
+import { SecteurChart } from "./components/chart/SecteurChart";
+
 export const ViewPartners = () => {
-  const { listPartners, stats, handleBack, handleCancel } = usePartners();
+  const {
+    listPartners,
+    stats,
+    chartData,
+    recoursData,
+    secteurData,
+    handleBack,
+    handleCancel,
+  } = usePartners();
   const columns = PartnersColumns({ onCancel: handleCancel });
 
   return (
@@ -47,9 +59,16 @@ export const ViewPartners = () => {
           />
         </div>
       )}
-
-      <div className="bg-white rounded-[12px] overflow-hidden">
-        <DataTable columns={columns} data={listPartners} />
+      <div className="min-h-[608px] flex md:flex-row gap-2  w-full rounded-[12px]">
+        <PartnerChart data={chartData} />
+        <div className="flex flex-col space-y-2 min-h-[608px] w-full">
+          <div className="min-h-[212px] flex justify-start  items-start  rounded-2xl bg-white ">
+            {recoursData && <RecoursChart data={recoursData} />}
+          </div>
+          <div className="min-h-[376px] rounded-2xl bg-white  ">
+            {secteurData && <SecteurChart data={secteurData} />}
+          </div>
+        </div>
       </div>
     </div>
   );
